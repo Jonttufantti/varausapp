@@ -22,7 +22,7 @@ module.exports = [
     },
   },
   {
-    files: ["backend/**/*.test.js"],
+    files: ["**/backend/**/*.test.js"],
     env: {
       jest: true,
     },
