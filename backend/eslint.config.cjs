@@ -5,6 +5,14 @@ module.exports = [
   js.configs.recommended,
 
   {
+    files: ["**/*.test.js"],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
+    },
+  },
+  {
     files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: "latest",
@@ -19,12 +27,6 @@ module.exports = [
       quotes: ["error", "double"],
       semi: ["error", "always"],
       "no-console": "off",
-    },
-  },
-  {
-    files: ["**/backend/**/*.test.js"],
-    env: {
-      jest: true,
     },
   },
 ];

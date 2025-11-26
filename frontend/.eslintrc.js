@@ -16,21 +16,24 @@ module.exports = {
       version: "detect",
     },
   },
+
   overrides: [
     {
+      files: ["tests/**/*.spec.js"],
+      parserOptions: {
+        sourceType: "module",
+      },
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
-      parserOptions: {
-        sourceType: "script",
-      },
-      files: ["tests/**/*.spec.js"],
       rules: {
-        "testing-library/*": "off",
+        "testing-library/prefer-screen-queries": "off",
+        "testing-library/no-render-in-setup": "off",
+        "testing-library/await-async-utils": "off",
       },
     },
   ],
+
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
