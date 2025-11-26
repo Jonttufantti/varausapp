@@ -36,11 +36,9 @@ export const ReservationCalendarContext = createContext({
   selectedDateEndTimeSlotIndex: null,
   setSelectedDateEndTimeSlotIndex: () => {},
   getReservationsForDate: () => {},
-  /* eslint-disable-next-line no-unused-expressions */
   createReservation: async ({ date, startTime, endTime }) => {
     date, startTime, endTime;
   },
-  /* eslint-disable-next-line no-unused-expressions */
   deleteReservation: async (id) => {
     id;
   },

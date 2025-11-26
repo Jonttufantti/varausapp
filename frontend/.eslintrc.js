@@ -18,6 +18,7 @@ module.exports = {
   },
 
   overrides: [
+    // Unit testit
     {
       files: ["tests/**/*.spec.js"],
       parserOptions: {
@@ -30,6 +31,12 @@ module.exports = {
         "testing-library/prefer-screen-queries": "off",
         "testing-library/no-render-in-setup": "off",
         "testing-library/await-async-utils": "off",
+      },
+    },
+    {
+      files: ["src/**/*.jsx"],
+      rules: {
+        "no-unused-expressions": "off",
       },
     },
   ],
