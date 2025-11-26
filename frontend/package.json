@@ -35,12 +35,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint ."
   },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "tests",
-      "e2e"
-    ]
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
