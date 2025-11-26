@@ -3,6 +3,7 @@ const globals = require("globals");
 
 module.exports = [
   js.configs.recommended,
+
   {
     files: ["**/*.js"],
     languageOptions: {
@@ -18,6 +19,12 @@ module.exports = [
       quotes: ["error", "double"],
       semi: ["error", "always"],
       "no-console": "off",
+    },
+  },
+  {
+    files: ["backend/**/*.test.js"],
+    env: {
+      jest: true,
     },
   },
 ];
