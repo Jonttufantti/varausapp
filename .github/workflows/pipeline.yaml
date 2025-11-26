@@ -17,20 +17,18 @@ jobs:
         with:
           node-version: "20"
 
-      # Backend steps
       - name: Install backend dependencies
         working-directory: ./backend
         run: npm ci
 
       - name: Lint backend
         working-directory: ./backend
-        run: npm run lint # Make sure you have this script
+        run: npm run lint
 
       - name: Test backend
         working-directory: ./backend
         run: npm test
 
-      # Frontend steps
       - name: Install frontend dependencies
         working-directory: ./frontend
         run: npm ci
@@ -47,7 +45,6 @@ jobs:
         working-directory: ./frontend
         run: npm run build
 
-      # E2E tests (optional, similar to pokedex)
       - name: Install Playwright
         run: npx playwright install --with-deps
 

@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --forceExit",
     "start": "nodemon index.js",
     "seed": "seed -u $MONGO_URI --drop-database --db-name test ./data",
     "lint": "eslint ."
@@ -27,6 +27,8 @@
     "nodemon": "^2.0.21"
   },
   "devDependencies": {
-    "eslint": "^9.39.1"
+    "eslint": "^9.39.1",
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
   }
 }

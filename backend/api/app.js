@@ -21,8 +21,7 @@ dotenv.config();
 // Connects the API to MongoDB.
 const connect = async () => {
   try {
-    const mongoUri =
-      process.env.MONGO_URI || "mongodb://127.0.0.1:27017/test";
+    const mongoUri = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/test";
 
     await mongoose.connect(mongoUri, {
       useNewUrlParser: true,
@@ -36,7 +35,6 @@ const connect = async () => {
 };
 
 connect();
-
 
 // Listeners for troubleshooting. Checks for connection problems and tries again
 mongoose.connection.on("disconnected", () => {
@@ -54,8 +52,17 @@ app.use(
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use(requestLogger);
+
+app.get("/health", (req, res) => {
+  res.send("ok");
+});
+
+app.get("/version", (req, res) => {
+  res.send("1");
+});
 
 app.use("/api/auth", authRoute);
 app.use("/api/me", meRoute);
