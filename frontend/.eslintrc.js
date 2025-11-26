@@ -25,6 +25,10 @@ module.exports = {
       parserOptions: {
         sourceType: "script",
       },
+      files: ["tests/**/*.spec.js"],
+      rules: {
+        "testing-library/*": "off",
+      },
     },
   ],
   parserOptions: {
