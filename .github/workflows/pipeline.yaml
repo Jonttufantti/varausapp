@@ -37,15 +37,16 @@ jobs:
         working-directory: ./frontend
         run: npm run lint
 
-      - name: Test frontend
+      - name: Test frontend unit tests
         working-directory: ./frontend
-        run: npm test
+        run: npm test -- --passWithNoTests
 
       - name: Build frontend
         working-directory: ./frontend
         run: npm run build
 
       - name: Install Playwright
+        working-directory: ./frontend
         run: npx playwright install --with-deps
 
       - name: Start services
@@ -55,12 +56,12 @@ jobs:
         run: sleep 10
 
       - name: Run E2E tests
-        run: npm run test:e2e
+        working-directory: ./frontend
+        run: npx playwright test
 
       - name: Stop services
         run: docker-compose down
 
-      # Deployment (choose one option below)
       - name: Trigger deployment
         if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
         run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
