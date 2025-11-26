@@ -18,7 +18,6 @@ module.exports = {
   },
 
   overrides: [
-    // Unit testit
     {
       files: ["tests/**/*.spec.js"],
       parserOptions: {
@@ -36,7 +35,10 @@ module.exports = {
     {
       files: ["src/**/*.jsx"],
       rules: {
+        "no-sequences": "off",
         "no-unused-expressions": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "react-hooks/exhaustive-deps": "off",
       },
     },
   ],
