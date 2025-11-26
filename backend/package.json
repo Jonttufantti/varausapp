@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "seed": "seed -u $MONGO_URI --drop-database --db-name test ./data"
+    "seed": "seed -u $MONGO_URI --drop-database --db-name test ./data",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,6 @@
     "nodemon": "^2.0.21"
   },
   "devDependencies": {
-    "eslint": "^8.43.0"
+    "eslint": "^9.39.1"
   }
 }
