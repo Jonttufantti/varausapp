@@ -35,6 +35,12 @@
     "eject": "react-scripts eject",
     "lint": "eslint ."
   },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "tests",
+      "e2e"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -55,6 +61,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1",
     "create-react-component-folder": "^0.3.7",
     "eslint": "^8.43.0",
     "eslint-plugin-react": "^7.37.5"
