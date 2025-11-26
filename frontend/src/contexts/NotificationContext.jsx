@@ -8,6 +8,7 @@ const NotificationContext = createContext({
    * ("success", "error", "warning" or "info")
    */
   showToast: ({ title, description, status }) => {
+    /* eslint-disable-next-line no-unused-expressions */
     title, description, status;
   },
 });
